@@ -1,0 +1,19 @@
+const int potPin = 13;  // Pin connected to the potentiometer
+const int ledPin = 12;   // Pin connected to the LED
+
+void setup() {
+  pinMode(ledPin, OUTPUT);
+  pinMode(potPin, INPUT);
+  Serial.begin(115200);
+}
+
+void loop() {
+  int potValue = analogRead(potPin);  // Read potentiometer value
+  int ledBrightness = map(potValue, 0, 4095, 0, 255); // Map to PWM range
+  analogWrite(ledPin, ledBrightness); // Set LED brightness
+  Serial.print("Potentiometer Value: ");
+  Serial.print(potValue);
+  Serial.print(" -> LED Brightness: ");
+  Serial.println(ledBrightness);
+  delay(100);
+}
