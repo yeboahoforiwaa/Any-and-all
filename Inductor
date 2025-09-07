@@ -1,0 +1,24 @@
+int ledPin = 8;
+int delayTime = 1000;
+
+void setup() {
+  pinMode(ledPin, OUTPUT);
+}
+
+void loop() {
+  //for gradually increasing the brightness
+  for (int i = 0; i <= 255; i++) {
+    analogWrite(ledPin, i);
+    delay(10); //the short delay makes the rise more visible
+  }
+
+  delay(delayTime);
+
+  //now for gradually decreasing the brightness
+  for (int i = 255, i >= 0; i--) {
+    analogWrite(ledPin, i);
+    delay(10);
+  }
+
+  delay(delayTime);
+}
