@@ -1,0 +1,16 @@
+//blinking LED with capacitor timing effect
+
+int ledPin = 12;
+int chargeTime = 1000;
+int dischargeTime = 500;
+
+void setup(){
+ pinMode( ledPin,, OUTPUT);
+}
+ digitalWrite(ledPin, HIGH);
+ delay(chargeTime);
+
+ digitalWrite(ledPin, LOW);
+ delay(chargeTime);
+  
+  
